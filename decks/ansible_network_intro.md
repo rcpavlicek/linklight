@@ -1,16 +1,13 @@
 # Introduction
 
-Gerald Dykeman
+Russell C. Pavlicek
 
-CCIE# 36354
+Cloud Solutions Architect
 
-Twitter: [@geralddykeman](https://twitter.com/geralddykeman)
+Emerging Technologies Team, Public Sector Group
 
-Linkedin: [/in/gdykeman](https://www.linkedin.com/in/gdykeman/)
+Email: [russp@redhat.com](mailto:russp@redhat.com)
 
-Email: [gdykeman@redhat.com](mailto:gdykeman@redhat.com)
-
-Github: [gdykeman](https://github.com/gdykeman)
 
 
 
