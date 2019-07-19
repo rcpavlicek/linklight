@@ -10,7 +10,7 @@ For our first playbook, we are only going to write one play and two tasks.
 
 ## Section 1: Creating a Directory Structure and Files for your Playbook
 
-There is a [best practicea](http://docs.ansible.com/ansible/playbooks_best_practices.html) on the preferred directory structures for playbooks.  We strongly encourage you to read and understand these practices as you develop your Ansible ninja skills.  That said, our playbook today is very basic and creating a complex structure will just confuse things.
+There is a [best practice](http://docs.ansible.com/ansible/playbooks_best_practices.html) on the preferred directory structures for playbooks.  We strongly encourage you to read and understand these practices as you develop your Ansible ninja skills.  That said, our playbook today is very basic and creating a complex structure will just confuse things.
 
 Instead, we are going to create a very simple directory structure for our playbook, and add just a couple of files to it.
 
@@ -121,5 +121,46 @@ like this.  Take note of the spacing and alignment.
         state: started
 ```
 ---
+
+## Section 5: Running your Playbook
+
+We are now going to run your brand-new playbook, on your two web nodes. To do this, you are going to use the ansible-playbook command.
+
+Step 1: Run your playbook
+From your playbook directory ( ~/apache_basic ), run your playbook.
+
+```bash
+ansible-playbook -i ../hosts install_apache.yml --private-key=~/.ssh/example-tower
+```
+
+However, before you run that command, lets take a few moments to understand the options.
+
+```bash
+--private-key This option asks for the private ssh key to connect to the remote machine.
+
+-i This option allows you to specify the inventory file you wish to use.
+
+-v Altough not used here, this increases verbosity. Try running your playbook a second time using -v or -vv to increase the verbosity (debugging information).
+
+--syntax-check If you run into any issues with your playbook running properly (from the copy/pasting that we told you not to do), you could use this option to help find those issues like so…​
+
+ansible-playbook -i ../hosts install_apache.yml --syntax-check --private-key=~/.ssh/example-tower
+```
+
+Now, run your playbook as specified in Step 1
+
+In standard output, you should see something that looks very similar to the following:
+
+stdout 1
+Figure 1: apache_basic playbook stdout
+Notice that the play and each task is named, so that you can understand the action being performed and the node it is being performed upon. You also may notice a task in there that you didn’t write; <cough> setup </cough>. This is because the setup module runs by default. To turn if off, you can specify gather_facts: false in your play definition like this:
+
+```yml
+---
+- hosts: web
+  name: Install the apache web service
+  become: yes
+  gather_facts: false
+```
 
 [Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../README.md)
