@@ -149,10 +149,6 @@ ansible-playbook -i ../hosts install_apache.yml --syntax-check --private-key=~/.
 
 Now, run your playbook as specified in Step 1
 
-In standard output, you should see something that looks very similar to the following:
-
-stdout 1
-Figure 1: apache_basic playbook stdout
 Notice that the play and each task is named, so that you can understand the action being performed and the node it is being performed upon. You also may notice a task in there that you didn’t write; <cough> setup </cough>. This is because the setup module runs by default. To turn if off, you can specify gather_facts: false in your play definition like this:
 
 ```yml
