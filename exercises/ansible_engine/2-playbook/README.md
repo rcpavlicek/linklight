@@ -135,13 +135,13 @@ ansible-playbook -i ../hosts install_apache.yml --private-key=~/.ssh/example-tow
 
 However, before you run that command, lets take a few moments to understand the options.
 
---private-key This option asks for the private ssh key to connect to the remote machine.
+- `--private-key` This option asks for the private ssh key to connect to the remote machine.
 
--i This option allows you to specify the inventory file you wish to use.
+- `-i` This option allows you to specify the inventory file you wish to use.
 
--v Although not used here, this increases verbosity. Try running your playbook a second time using -v or -vv to increase the verbosity (debugging information).
+- `-v` Although not used here, this increases verbosity. Try running your playbook a second time using -v or -vv to increase the verbosity (debugging information).
 
---syntax-check If you run into any issues with your playbook running properly (from the copy/pasting that we told you not to do), you could use this option to help find those issues like so…​
+- `--syntax-check` If you run into any issues with your playbook running properly (from the copy/pasting that we told you not to do), you could use this option to help find those issues like so…​
 
 ```bash
 ansible-playbook -i ../hosts install_apache.yml --syntax-check --private-key=~/.ssh/example-tower
