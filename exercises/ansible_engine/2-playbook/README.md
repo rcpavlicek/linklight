@@ -126,11 +126,10 @@ like this.  Take note of the spacing and alignment.
 
 We are now going to run your brand-new playbook, on your two web nodes. To do this, you are going to use the ansible-playbook command.
 
-Step 1: Run your playbook
 From your playbook directory ( ~/apache_basic ), run your playbook.
 
 ```bash
-ansible-playbook -i ../hosts install_apache.yml --private-key=~/.ssh/example-tower
+ansible-playbook -i ../hosts install_apache.yml --private-key#~/.ssh/workshopname-tower
 ```
 
 However, before you run that command, lets take a few moments to understand the options.
@@ -144,12 +143,12 @@ However, before you run that command, lets take a few moments to understand the 
 - `--syntax-check` If you run into any issues with your playbook running properly (from the copy/pasting that we told you not to do), you could use this option to help find those issues like so…​
 
 ```bash
-ansible-playbook -i ../hosts install_apache.yml --syntax-check --private-key=~/.ssh/example-tower
+ansible-playbook -i ../hosts install_apache.yml --syntax-check --private-key#~/.ssh/workshopname-tower
 ```
 
-Now, run your playbook as specified in Step 1
+Now, run your playbook as specified atop Section 5.
 
-Notice that the play and each task is named, so that you can understand the action being performed and the node it is being performed upon. You also may notice a task in there that you didn’t write; <cough> setup </cough>. This is because the setup module runs by default. To turn if off, you can specify gather_facts: false in your play definition like this:
+Notice that the play and each task is named, so that you can understand the action being performed and the node it is being performed upon. You also may notice a task in there that you didn’t write; `setup`. This is because the setup module runs by default. To turn if off, you can specify `gather_facts: false` in your play definition like this:
 
 ```yml
 ---
